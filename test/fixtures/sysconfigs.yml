@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  marketdate: 2014-07-23
+  batchstart: 2014-07-23 14:32:40
+  batchend: 2014-07-23 14:32:40
+
+two:
+  marketdate: 2014-07-23
+  batchstart: 2014-07-23 14:32:40
+  batchend: 2014-07-23 14:32:40

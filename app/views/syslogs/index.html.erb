@@ -1,0 +1,31 @@
+<h1>Listing syslogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Time</th>
+      <th>Opt</th>
+      <th>Curstate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @syslogs.each do |syslog| %>
+      <tr>
+        <td><%= syslog.role %></td>
+        <td><%= syslog.time %></td>
+        <td><%= syslog.opt %></td>
+        <td><%= syslog.curstate %></td>
+        <td><%= link_to 'Show', syslog %></td>
+        <td><%= link_to 'Edit', edit_syslog_path(syslog) %></td>
+        <td><%= link_to 'Destroy', syslog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Syslog', new_syslog_path %>

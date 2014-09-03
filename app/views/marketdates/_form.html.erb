@@ -1,0 +1,10 @@
+<%= simple_form_for @marketdate, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :tradedate %>
+  <%= error_span(@marketdate[:tradedate]) %>
+  <%= f.input :daystate %>
+  <%= error_span(@marketdate[:daystate]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                marketdates_path, :class => 'btn btn-default' %>
+<% end %>

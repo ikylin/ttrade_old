@@ -1,0 +1,61 @@
+<%- model_class = Account -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:setdate) %>:</strong></dt>
+  <dd><%= @account.setdate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @account.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tradenum) %>:</strong></dt>
+  <dd><%= @account.tradenum %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:winratio) %>:</strong></dt>
+  <dd><%= @account.winratio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:plratio) %>:</strong></dt>
+  <dd><%= @account.plratio %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:profitmax) %>:</strong></dt>
+  <dd><%= @account.profitmax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lossmax) %>:</strong></dt>
+  <dd><%= @account.lossmax %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @account.user_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:marketdate) %>:</strong></dt>
+  <dd><%= @account.marketdate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:duration) %>:</strong></dt>
+  <dd><%= @account.duration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:wincount) %>:</strong></dt>
+  <dd><%= @account.wincount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:losscount) %>:</strong></dt>
+  <dd><%= @account.losscount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:profit) %>:</strong></dt>
+  <dd><%= @account.profit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:pretradenum) %>:</strong></dt>
+  <dd><%= @account.pretradenum %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:preprofit) %>:</strong></dt>
+  <dd><%= @account.preprofit %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prewincount) %>:</strong></dt>
+  <dd><%= @account.prewincount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prelosscount) %>:</strong></dt>
+  <dd><%= @account.prelosscount %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_file_name) %>:</strong></dt>
+  <dd><%= @account.avatar_file_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_content_type) %>:</strong></dt>
+  <dd><%= @account.avatar_content_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_file_size) %>:</strong></dt>
+  <dd><%= @account.avatar_file_size %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_updated_at) %>:</strong></dt>
+  <dd><%= @account.avatar_updated_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:analyst_id) %>:</strong></dt>
+  <dd><%= @account.analyst_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              accounts_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_account_path(@account), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              account_path(@account),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

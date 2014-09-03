@@ -1,0 +1,50 @@
+<%= simple_form_for @account, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :setdate %>
+  <%= error_span(@account[:setdate]) %>
+  <%= f.input :name %>
+  <%= error_span(@account[:name]) %>
+  <%= f.input :tradenum %>
+  <%= error_span(@account[:tradenum]) %>
+  <%= f.input :winratio %>
+  <%= error_span(@account[:winratio]) %>
+  <%= f.input :plratio %>
+  <%= error_span(@account[:plratio]) %>
+  <%= f.input :profitmax %>
+  <%= error_span(@account[:profitmax]) %>
+  <%= f.input :lossmax %>
+  <%= error_span(@account[:lossmax]) %>
+  <%= f.input :user_id %>
+  <%= error_span(@account[:user_id]) %>
+  <%= f.input :marketdate %>
+  <%= error_span(@account[:marketdate]) %>
+  <%= f.input :duration %>
+  <%= error_span(@account[:duration]) %>
+  <%= f.input :wincount %>
+  <%= error_span(@account[:wincount]) %>
+  <%= f.input :losscount %>
+  <%= error_span(@account[:losscount]) %>
+  <%= f.input :profit %>
+  <%= error_span(@account[:profit]) %>
+  <%= f.input :pretradenum %>
+  <%= error_span(@account[:pretradenum]) %>
+  <%= f.input :preprofit %>
+  <%= error_span(@account[:preprofit]) %>
+  <%= f.input :prewincount %>
+  <%= error_span(@account[:prewincount]) %>
+  <%= f.input :prelosscount %>
+  <%= error_span(@account[:prelosscount]) %>
+  <%= f.input :avatar_file_name %>
+  <%= error_span(@account[:avatar_file_name]) %>
+  <%= f.input :avatar_content_type %>
+  <%= error_span(@account[:avatar_content_type]) %>
+  <%= f.input :avatar_file_size %>
+  <%= error_span(@account[:avatar_file_size]) %>
+  <%= f.input :avatar_updated_at %>
+  <%= error_span(@account[:avatar_updated_at]) %>
+  <%= f.input :analyst_id %>
+  <%= error_span(@account[:analyst_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                accounts_path, :class => 'btn btn-default' %>
+<% end %>

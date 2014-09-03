@@ -1,0 +1,56 @@
+<%- model_class = Portfolio -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:buydate) %></th>
+      <th><%= model_class.human_attribute_name(:buyprice) %></th>
+      <th><%= model_class.human_attribute_name(:profit) %></th>
+      <th><%= model_class.human_attribute_name(:volum) %></th>
+      <th><%= model_class.human_attribute_name(:option) %></th>
+      <th><%= model_class.human_attribute_name(:account_id) %></th>
+      <th><%= model_class.human_attribute_name(:quotation_id) %></th>
+      <th><%= model_class.human_attribute_name(:marketdate) %></th>
+      <th><%= model_class.human_attribute_name(:selldate) %></th>
+      <th><%= model_class.human_attribute_name(:sellprice) %></th>
+      <th><%= model_class.human_attribute_name(:duration) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @portfolios.each do |portfolio| %>
+      <tr>
+        <td><%= link_to portfolio.id, portfolio_path(portfolio) %></td>
+        <td><%= portfolio.buydate %></td>
+        <td><%= portfolio.buyprice %></td>
+        <td><%= portfolio.profit %></td>
+        <td><%= portfolio.volum %></td>
+        <td><%= portfolio.option %></td>
+        <td><%= portfolio.account_id %></td>
+        <td><%= portfolio.quotation_id %></td>
+        <td><%= portfolio.marketdate %></td>
+        <td><%= portfolio.selldate %></td>
+        <td><%= portfolio.sellprice %></td>
+        <td><%= portfolio.duration %></td>
+        <td><%=l portfolio.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_portfolio_path(portfolio), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      portfolio_path(portfolio),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_portfolio_path,
+            :class => 'btn btn-primary' %>

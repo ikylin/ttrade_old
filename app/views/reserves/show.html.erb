@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stockstatus:</strong>
+  <%= @reserve.stockstatus %>
+</p>
+
+<p>
+  <strong>Hhv:</strong>
+  <%= @reserve.hhv %>
+</p>
+
+<p>
+  <strong>Llv:</strong>
+  <%= @reserve.llv %>
+</p>
+
+<p>
+  <strong>Hdate:</strong>
+  <%= @reserve.hdate %>
+</p>
+
+<p>
+  <strong>Ldate:</strong>
+  <%= @reserve.ldate %>
+</p>
+
+<p>
+  <strong>Profit:</strong>
+  <%= @reserve.profit %>
+</p>
+
+<p>
+  <strong>Loss:</strong>
+  <%= @reserve.loss %>
+</p>
+
+<p>
+  <strong>Plratio:</strong>
+  <%= @reserve.plratio %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @reserve.note %>
+</p>
+
+<%= link_to 'Edit', edit_reserf_path(@reserve), :class => "btn btn-primary" %> |
+<%= link_to 'Back', reserves_path, :class => "btn btn-primary" %>

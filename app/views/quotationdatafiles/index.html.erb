@@ -1,0 +1,54 @@
+<%- model_class = Quotationdatafile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:filetype) %></th>
+      <th><%= model_class.human_attribute_name(:filestatus) %></th>
+      <th><%= model_class.human_attribute_name(:avatar_file_name) %></th>
+      <th><%= model_class.human_attribute_name(:avatar_content_type) %></th>
+      <th><%= model_class.human_attribute_name(:avatar_file_size) %></th>
+      <th><%= model_class.human_attribute_name(:avatar_updated_at) %></th>
+      <th><%= model_class.human_attribute_name(:marketdate) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @quotationdatafiles.each do |quotationdatafile| %>
+      <tr>
+        <td><%= link_to quotationdatafile.id, quotationdatafile_path(quotationdatafile) %></td>
+        <td><%= quotationdatafile.filetype %></td>
+        <td><%= quotationdatafile.filestatus %></td>
+        <td><%= quotationdatafile.avatar_file_name %></td>
+        <td><%= quotationdatafile.avatar_content_type %></td>
+        <td><%= quotationdatafile.avatar_file_size %></td>
+        <td><%= quotationdatafile.avatar_updated_at %></td>
+        <td><%= quotationdatafile.marketdate %></td>
+        <td><%=l quotationdatafile.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_quotationdatafile_path(quotationdatafile), :class => 'btn btn-default btn-xs' %>
+           <%= if quotationdatafile.filetype == 'bxc'
+                link_to t('.action', :default => t("helpers.links.action")),
+                      bxctoodsupdate_quotationdatafile_path(quotationdatafile), :class => 'btn btn-default btn-xs'
+                end
+             %>
+        
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      quotationdatafile_path(quotationdatafile),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_quotationdatafile_path,
+            :class => 'btn btn-primary' %>

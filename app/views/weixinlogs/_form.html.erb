@@ -1,0 +1,25 @@
+<%= form_for(@weixinlog) do |f| %>
+  <% if @weixinlog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@weixinlog.errors.count, "error") %> prohibited this weixinlog from being saved:</h2>
+
+      <ul>
+      <% @weixinlog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

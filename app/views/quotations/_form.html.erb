@@ -1,0 +1,24 @@
+<%= simple_form_for @quotation, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :code %>
+  <%= error_span(@quotation[:code]) %>
+  <%= f.input :name %>
+  <%= error_span(@quotation[:name]) %>
+  <%= f.input :plate %>
+  <%= error_span(@quotation[:plate]) %>
+  <%= f.input :open %>
+  <%= error_span(@quotation[:open]) %>
+  <%= f.input :high %>
+  <%= error_span(@quotation[:high]) %>
+  <%= f.input :low %>
+  <%= error_span(@quotation[:low]) %>
+  <%= f.input :close %>
+  <%= error_span(@quotation[:close]) %>
+  <%= f.input :marketdate %>
+  <%= error_span(@quotation[:marketdate]) %>
+  <%= f.input :dprofit %>
+  <%= error_span(@quotation[:dprofit]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                quotations_path, :class => 'btn btn-default' %>
+<% end %>

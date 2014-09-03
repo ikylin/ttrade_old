@@ -1,0 +1,25 @@
+<%= form_for(@portfoliolog) do |f| %>
+  <% if @portfoliolog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@portfoliolog.errors.count, "error") %> prohibited this portfoliolog from being saved:</h2>
+
+      <ul>
+      <% @portfoliolog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :opt %><br>
+    <%= f.text_field :opt %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

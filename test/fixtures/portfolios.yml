@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  buydate: 2014-07-20
+  buyprice: 9.99
+  profit: 9.99
+  volum: 9.99
+  option: MyString
+
+two:
+  buydate: 2014-07-20
+  buyprice: 9.99
+  profit: 9.99
+  volum: 9.99
+  option: MyString

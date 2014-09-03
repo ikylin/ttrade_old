@@ -1,0 +1,52 @@
+<div class="panel panel-default">
+ <!-- Table -->
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Market date</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Plate</th>
+      <th>Close</th>
+      <th>Dprofit</th>
+      <th>Hhv</th>
+      <th>Llv</th>
+      <th>Profit</th>
+      <th>Loss</th>
+      <th>Plratio</th>
+      <th>Optadvise</th>
+      <th>Duration</th>
+      <th>Catchdate</th>
+      <th>Releasedate</th>
+      <th>Note</th>
+    </tr>
+  </thead>
+
+  <tbody>
+		<% @i = 1 %>
+    <% @reserves.each do |reserve| %>
+      <tr>
+        <td><%= @i %></td>
+        <td><%= reserve.marketdate %></td>
+        <td><%= reserve.quotation.code unless reserve.quotation.nil? %></td>
+        <td><%= reserve.quotation.name  unless reserve.quotation.nil? %></td>
+        <td><%= reserve.quotation.plate  unless reserve.quotation.nil? %></td>
+        <td><%= number_with_precision reserve.quotation.close, precision: 2  unless reserve.quotation.nil? %></td>
+        <td><%= number_to_percentage reserve.quotation.dprofit  unless reserve.quotation.nil? %></td>
+        <td><%= number_with_precision reserve.hhv, precision: 2 %></td>
+        <td><%= number_with_precision reserve.llv, precision: 2 %></td>
+        <td><%= number_to_percentage reserve.profit * 100, precision: 0 unless reserve.profit.nil? %></td>
+        <td><%= number_to_percentage reserve.loss * 100, precision: 0 unless reserve.loss.nil? %></td>
+        <td><%= number_with_precision reserve.plratio, precision: 1 %></td>
+        <td><%= reserve.optadvise %></td>
+        <td><%= reserve.duration %></td>
+        <td><%= reserve.catchdate %></td>
+        <td><%= reserve.releasedate %></td>
+        <td><%= reserve.note %></td>
+       </tr>
+			<% @i = @i + 1 %>
+    <% end %>
+  </tbody>
+</table>
+</div>

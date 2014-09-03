@@ -1,0 +1,20 @@
+<%= simple_form_for @sysconfig, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :cfgdate %>
+  <%= error_span(@sysconfig[:cfgdate]) %>
+  <%= f.input :cfgtime %>
+  <%= error_span(@sysconfig[:cfgtime]) %>
+  <%= f.input :cfgname %>
+  <%= error_span(@sysconfig[:cfgname]) %>
+  <%= f.input :cfginteger %>
+  <%= error_span(@sysconfig[:cfginteger]) %>
+  <%= f.input :cfgstring %>
+  <%= error_span(@sysconfig[:cfgstring]) %>
+  <%= f.input :cfgtext %>
+  <%= error_span(@sysconfig[:cfgtext]) %>
+  <%= f.input :lock_version %>
+  <%= error_span(@sysconfig[:lock_version]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sysconfigs_path, :class => 'btn btn-default' %>
+<% end %>

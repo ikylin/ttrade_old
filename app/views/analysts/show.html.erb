@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @analyst.name %>
+</p>
+
+<p>
+  <strong>Lvl:</strong>
+  <%= @analyst.lvl %>
+</p>
+
+<p>
+  <strong>Fan:</strong>
+  <%= @analyst.fan %>
+</p>
+
+<%= link_to 'Edit', edit_analyst_path(@analyst) %> |
+<%= link_to 'Back', analysts_path %>

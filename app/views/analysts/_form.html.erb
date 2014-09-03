@@ -1,0 +1,29 @@
+<%= form_for(@analyst) do |f| %>
+  <% if @analyst.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@analyst.errors.count, "error") %> prohibited this analyst from being saved:</h2>
+
+      <ul>
+      <% @analyst.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lvl %><br>
+    <%= f.text_field :lvl %>
+  </div>
+  <div class="field">
+    <%= f.label :fan %><br>
+    <%= f.number_field :fan %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

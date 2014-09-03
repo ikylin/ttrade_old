@@ -1,0 +1,28 @@
+<%= simple_form_for @portfolio, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :buydate %>
+  <%= error_span(@portfolio[:buydate]) %>
+  <%= f.input :buyprice %>
+  <%= error_span(@portfolio[:buyprice]) %>
+  <%= f.input :profit %>
+  <%= error_span(@portfolio[:profit]) %>
+  <%= f.input :volum %>
+  <%= error_span(@portfolio[:volum]) %>
+  <%= f.input :option %>
+  <%= error_span(@portfolio[:option]) %>
+  <%= f.input :account_id %>
+  <%= error_span(@portfolio[:account_id]) %>
+  <%= f.input :quotation_id %>
+  <%= error_span(@portfolio[:quotation_id]) %>
+  <%= f.input :marketdate %>
+  <%= error_span(@portfolio[:marketdate]) %>
+  <%= f.input :selldate %>
+  <%= error_span(@portfolio[:selldate]) %>
+  <%= f.input :sellprice %>
+  <%= error_span(@portfolio[:sellprice]) %>
+  <%= f.input :duration %>
+  <%= error_span(@portfolio[:duration]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                portfolios_path, :class => 'btn btn-default' %>
+<% end %>

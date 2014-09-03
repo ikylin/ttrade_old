@@ -1,0 +1,27 @@
+<h1>Listing weixinlogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weixinlogs.each do |weixinlog| %>
+      <tr>
+        <td><%= weixinlog.time %></td>
+        <td><%= weixinlog.content %></td>
+        <td><%= link_to 'Show', weixinlog %></td>
+        <td><%= link_to 'Edit', edit_weixinlog_path(weixinlog) %></td>
+        <td><%= link_to 'Destroy', weixinlog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weixinlog', new_weixinlog_path %>

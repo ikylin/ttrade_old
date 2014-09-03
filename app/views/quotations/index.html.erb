@@ -1,0 +1,53 @@
+<%- model_class = Quotation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th><%= model_class.human_attribute_name(:code) %></th>
+        <th><%= model_class.human_attribute_name(:name) %></th>
+        <th><%= model_class.human_attribute_name(:plate) %></th>
+        <th><%= model_class.human_attribute_name(:open) %></th>
+        <th><%= model_class.human_attribute_name(:high) %></th>
+        <th><%= model_class.human_attribute_name(:low) %></th>
+        <th><%= model_class.human_attribute_name(:close) %></th>
+        <th><%= model_class.human_attribute_name(:marketdate) %></th>
+        <th><%= model_class.human_attribute_name(:dprofit) %></th>
+        <th><%= model_class.human_attribute_name(:tpstatus) %></th>
+        <th><%= model_class.human_attribute_name(:cqstatus) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% i = 0 %>
+      <% @quotations.each do |quotation| %>
+        <tr>
+          <td><%= i = i + 1 %></td>
+          <td><%= quotation.code %></td>
+          <td><%= quotation.name %></td>
+          <td><%= quotation.plate %></td>
+          <td><%= number_with_precision quotation.open, precision: 2 %></td>
+          <td><%= number_with_precision quotation.high, precision: 2 %></td>
+          <td><%= number_with_precision quotation.low, precision: 2 %></td>
+          <td><%= number_with_precision quotation.close, precision: 2 %></td>
+          <td><%= quotation.marketdate %></td>
+          <td><%= number_to_percentage quotation.dprofit, precision: 2 %></td>
+          <td><%= quotation.tpstatus %></td>
+          <td><%= quotation.cqstatus %></td>
+          <td>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_quotation_path(quotation), :class => 'btn btn-default btn-xs' %>
+            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                        quotation_path(quotation),
+                        :method => :delete,
+                        :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                        :class => 'btn btn-xs btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

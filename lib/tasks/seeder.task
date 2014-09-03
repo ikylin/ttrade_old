@@ -1,0 +1,9 @@
+namespace:dbdo
+	desc "Loadseedfixtures(fromdb/seed)intothecurrent environment'sdatabase."
+		task: seed => :environment do
+			require 'active_record/fixtures'
+			Dir.glob(RAILS_ROOT+'/db/fixtures/*.csv').each do |file|
+　　	Fixtures.create_fixtures('db/seed', File.basename(file,'.*'))
+		end
+	end
+end

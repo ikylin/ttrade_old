@@ -1,0 +1,33 @@
+<%= form_for(@syslog) do |f| %>
+  <% if @syslog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@syslog.errors.count, "error") %> prohibited this syslog from being saved:</h2>
+
+      <ul>
+      <% @syslog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :role %><br>
+    <%= f.text_field :role %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :opt %><br>
+    <%= f.text_field :opt %>
+  </div>
+  <div class="field">
+    <%= f.label :curstate %><br>
+    <%= f.text_field :curstate %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

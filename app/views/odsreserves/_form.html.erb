@@ -1,0 +1,24 @@
+<%= simple_form_for @odsreserf, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :code %>
+  <%= error_span(@odsreserf[:code]) %>
+  <%= f.input :name %>
+  <%= error_span(@odsreserf[:name]) %>
+  <%= f.input :plate %>
+  <%= error_span(@odsreserf[:plate]) %>
+  <%= f.input :open %>
+  <%= error_span(@odsreserf[:open]) %>
+  <%= f.input :high %>
+  <%= error_span(@odsreserf[:high]) %>
+  <%= f.input :low %>
+  <%= error_span(@odsreserf[:low]) %>
+  <%= f.input :close %>
+  <%= error_span(@odsreserf[:close]) %>
+  <%= f.input :dprofit %>
+  <%= error_span(@odsreserf[:dprofit]) %>
+  <%= f.input :duration %>
+  <%= error_span(@odsreserf[:duration]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                odsreserves_path, :class => 'btn btn-default' %>
+<% end %>

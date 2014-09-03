@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyString
+  plate: MyString
+  open: 9.99
+  high: 9.99
+  low: 9.99
+  close: 9.99
+
+two:
+  code: MyString
+  name: MyString
+  plate: MyString
+  open: 9.99
+  high: 9.99
+  low: 9.99
+  close: 9.99

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stockstatus: MyString
+  hhv: 9.99
+  llv: 9.99
+  hdate: 2014-07-20
+  ldata: 2014-07-20
+  profit: 9.99
+  loss: 9.99
+  plratio: 9.99
+  note: MyText
+
+two:
+  stockstatus: MyString
+  hhv: 9.99
+  llv: 9.99
+  hdate: 2014-07-20
+  ldata: 2014-07-20
+  profit: 9.99
+  loss: 9.99
+  plratio: 9.99
+  note: MyText

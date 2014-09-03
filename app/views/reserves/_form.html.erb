@@ -1,0 +1,77 @@
+<%= form_for(@reserve) do |f| %>
+  <% if @reserve.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reserve.errors.count, "error") %> prohibited this reserve from being saved:</h2>
+
+      <ul>
+      <% @reserve.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :marketdate %><br>
+    <%= f.date_select :marketdate %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :code %><br>
+    <%= text_field_tag :code, @reserve.quotation.code %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= text_field_tag :name, @reserve.quotation.name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :close %><br>
+    <%= text_field_tag :close, @reserve.quotation.close %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stockstatus %><br>
+    <%= f.text_field :stockstatus %>
+  </div>
+  <div class="field">
+    <%= f.label :hhv %><br>
+    <%= f.text_field :hhv %>
+  </div>
+  <div class="field">
+    <%= f.label :llv %><br>
+    <%= f.text_field :llv %>
+  </div>
+  <div class="field">
+    <%= f.label :hdate %><br>
+    <%= f.date_select :hdate %>
+  </div>
+  <div class="field">
+    <%= f.label :ldate %><br>
+    <%= f.date_select :ldate %>
+  </div>
+  <div class="field">
+    <%= f.label :profit %><br>
+    <%= f.text_field :profit %>
+  </div>
+  <div class="field">
+    <%= f.label :loss %><br>
+    <%= f.text_field :loss %>
+  </div>
+  <div class="field">
+    <%= f.label :plratio %><br>
+    <%= f.text_field :plratio %>
+  </div>
+  <div class="field">
+    <%= f.label :optadvise %><br>
+    <%= f.text_field :optadvise %>
+  </div>
+  <div class="field">
+    <%= f.label :note %><br>
+    <%= f.text_area :note %>
+  </div>
+  <div class="actions">
+    <%= submit_tag :submit, :class => "btn btn-primary" %>
+  </div>
+<% end %>

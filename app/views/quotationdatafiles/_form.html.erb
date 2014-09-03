@@ -1,0 +1,21 @@
+<%= simple_form_for @quotationdatafile, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <%= f.input :filetype %>
+  <%= error_span(@quotationdatafile[:filetype]) %>
+  <%= f.input :filestatus %>
+  <%= error_span(@quotationdatafile[:filestatus]) %>
+  <%= f.input :avatar_file_name %>
+  <%= error_span(@quotationdatafile[:avatar_file_name]) %>
+  <%= f.input :avatar_content_type %>
+  <%= error_span(@quotationdatafile[:avatar_content_type]) %>
+  <%= f.input :avatar_file_size %>
+  <%= error_span(@quotationdatafile[:avatar_file_size]) %>
+  <%= f.input :avatar_updated_at %>
+  <%= error_span(@quotationdatafile[:avatar_updated_at]) %>
+  <%= f.input :marketdate %>
+  <%= error_span(@quotationdatafile[:marketdate]) %>
+  <%= f.file_field :avatar %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                quotationdatafiles_path, :class => 'btn btn-default' %>
+<% end %>

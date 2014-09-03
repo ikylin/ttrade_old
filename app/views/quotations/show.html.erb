@@ -1,0 +1,35 @@
+<%- model_class = Quotation -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:code) %>:</strong></dt>
+  <dd><%= @quotation.code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @quotation.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:plate) %>:</strong></dt>
+  <dd><%= @quotation.plate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:open) %>:</strong></dt>
+  <dd><%= @quotation.open %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:high) %>:</strong></dt>
+  <dd><%= @quotation.high %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:low) %>:</strong></dt>
+  <dd><%= @quotation.low %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:close) %>:</strong></dt>
+  <dd><%= @quotation.close %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:marketdate) %>:</strong></dt>
+  <dd><%= @quotation.marketdate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:dprofit) %>:</strong></dt>
+  <dd><%= @quotation.dprofit %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              quotations_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_quotation_path(@quotation), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              quotation_path(@quotation),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

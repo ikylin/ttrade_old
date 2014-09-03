@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ttrade</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<% if current_user %>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="opt-menu">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Status</button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Watch(1)', reserves_path(qtype: 'status', status: 1) %></li>
+            <li><%= link_to 'Addition(3)', reserves_path(qtype: 'status', status: 3) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'New High(2)', reserves_path(qtype: 'status', status: 2) %></li>
+            <li><%= link_to 'Take Off(4)', reserves_path(qtype: 'status', status: 4) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Others(0)', reserves_path(qtype: 'status', status: 0) %></li>
+          </ul>
+        </div><!-- /btn-group -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-success">Advise</button>
+          <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Buy', reserves_path(qtype: 'advise', optadvise: 'buy') %></li>
+            <li><%= link_to 'Sell', reserves_path(qtype: 'advise', optadvise: 'sell') %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Others', reserves_path(qtype: 'advise', optadvise: '') %></li>
+          </ul>
+        </div><!-- /btn-group -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-info">Search</button>
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Yestoday Quotations', quotations_path(qtype: 'yestoday') %></li>
+            <li><%= link_to 'Yestoday Reserves', reserves_path(qtype: 'yestoday') %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Today Quotations', quotations_path(qtype: 'today') %></li>
+            <li><%= link_to 'Today Reserves', reserves_path(qtype: 'today') %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'All Quotations', quotations_path(qtype: 'all') %></li>
+            <li><%= link_to 'All Reserves', reserves_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'All Bat Files', quotationdatafiles_path %></li>
+            <li><%= link_to 'All Marketdates', marketdates_path %></li>
+            <li><%= link_to 'All System Config', sysconfigs_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'All Users', users_path %></li>
+            <li><%= link_to 'All Accounts', accounts_path %></li>
+            <li><%= link_to 'All Portfolios', portfolios_path %></li>
+          </ul>
+        </div><!-- /btn-group -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-warning">Daily Action</button>
+          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Quotation batch', new_quotationdatafile_path(battype: 'q' ) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Reserve batch', new_quotationdatafile_path(battype: 'b' ) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Analysis', reserves_path(qtype: 'catch' ) %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Date Change', dobatch_quotationdatafiles_path(battype: 'riqie' ), data: { confirm: 'Are you sure?' } %></li>
+          </ul>
+        </div><!-- /btn-group -->
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-danger">Others</button>
+          <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'New Quotation', new_quotation_path %></li>
+            <li><%= link_to 'New Reserve', new_reserf_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Reset Marketdate', reset_marketdate_to_today_marketdates_path, data: { confirm: "Are you sure?" } %></li>
+            <li class="divider"></li>
+              <li> <%= link_to('退出', destroy_user_session_path, :method => :delete) %> </li>
+              <li> <%= link_to('修改密码', edit_registration_path(:user)) %> </li>
+          </ul>
+        </div><!-- /btn-group -->
+        
+        <div class="btn-group">
+          <button type="button" class="btn btn-default">Test</button>
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'allportfolios', dobatch_quotationdatafiles_path(battype: 'all' ) %></li>
+            <li><%= link_to 'guanzhu', dobatch_quotationdatafiles_path(battype: 'guangzhu' ) %></li>
+            <li><%= link_to 'zhanghu', dobatch_quotationdatafiles_path(battype: 'zhanghu' ) %></li>
+            <li><%= link_to 'jiangu', dobatch_quotationdatafiles_path(battype: 'jiangu' ) %></li>
+            <li><%= link_to 'shouyi', dobatch_quotationdatafiles_path(battype: 'shouyi' ) %></li>
+            <li class="divider"></li>
+          </ul>
+        </div><!-- /btn-group -->
+
+        <div class="col-lg-3">
+          <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <%= form_tag('/reserves/qcode') do -%>
+            <input type="text" name="qcode" class="form-control" placeholder="Code">
+            <% end -%>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+</nav>
+<% else %>
+  <li> <%= link_to('注册', new_registration_path(:user)) %> |  <%= link_to('登录', new_session_path(:user)) %> </li>
+<% end %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<span></span>
+<div>
+ <%if flash[:notice] -%>
+   <div id="notice"><%= flash[:notice] %></div>
+ <%end -%>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

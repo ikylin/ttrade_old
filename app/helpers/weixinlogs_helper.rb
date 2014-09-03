@@ -1,0 +1,2 @@
+module WeixinlogsHelper
+end

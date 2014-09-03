@@ -1,0 +1,54 @@
+<%- model_class = Odsreserf -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:No) %></th>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:plate) %></th>
+      <th><%= model_class.human_attribute_name(:open) %></th>
+      <th><%= model_class.human_attribute_name(:high) %></th>
+      <th><%= model_class.human_attribute_name(:low) %></th>
+      <th><%= model_class.human_attribute_name(:close) %></th>
+      <th><%= model_class.human_attribute_name(:dprofit) %></th>
+      <th><%= model_class.human_attribute_name(:duration) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% @odsreserves.each do |odsreserf| %>
+      <tr>
+        <td><%= i %></td>
+        <td><%= odsreserf.code %></td>
+        <td><%= odsreserf.name %></td>
+        <td><%= odsreserf.plate %></td>
+        <td><%= number_with_precision odsreserf.open, precision: 2 %></td>
+        <td><%= number_with_precision odsreserf.high, precision: 2 %></td>
+        <td><%= number_with_precision odsreserf.low, precision: 2 %></td>
+        <td><%= number_with_precision odsreserf.close, precision: 2 %></td>
+        <td><%= number_with_precision odsreserf.dprofit, precision: 2 %></td>
+        <td><%= odsreserf.duration %></td>
+        <td><%= odsreserf.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_odsreserf_path(odsreserf), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      odsreserf_path(odsreserf),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% i = i + 1 %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_odsreserf_path,
+            :class => 'btn btn-primary' %>

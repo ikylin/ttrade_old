@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ttrade</title>
+  <link data-turbolinks-track="true" href="/assets/about.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/accounts.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/analysts.css?body=1" media="all" rel="stylesheet" />
+
+<link data-turbolinks-track="true" href="/assets/bootstrap-theme.min.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/bootstrap.min.css?body=1" media="all" rel="stylesheet" />
+
+<link data-turbolinks-track="true" href="/assets/marketdates.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/odsreserves.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/portfoliologs.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/portfolios.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/quotationdatafiles.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/quotations.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/reserves.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/sysconfigs.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/syslogs.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/users.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/weixinlogs.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/welcome.css?body=1" media="all" rel="stylesheet" />
+<link data-turbolinks-track="true" href="/assets/application.css?body=1" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
+
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/transition.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/alert.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/modal.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/dropdown.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/scrollspy.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/tab.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/tooltip.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/popover.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/button.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/collapse.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/carousel.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap/affix.js?body=1"></script>
+
+<script data-turbolinks-track="true" src="/assets/twitter/bootstrap.js?body=1"></script>
+
+<script data-turbolinks-track="true" src="/assets/turbolinks.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/about.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/accounts.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/analysts.js?body=1"></script>
+
+
+<script data-turbolinks-track="true" src="/assets/marketdates.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/odsreserves.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/portfoliologs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/portfolios.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/quotationdatafiles.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/quotations.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/reserves.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/sysconfigs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/syslogs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/users.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/weixinlogs.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/welcome.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/application.js?body=1"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="E869c5+OzvgjI5Wq2fgN7eLCBgJCz6FiDiFB33p4TN0=" name="csrf-token" />
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+
+      <form accept-charset="UTF-8" action="/reserves/qcode" class="navbar-form navbar-left" method="post" role="search"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="E869c5+OzvgjI5Wq2fgN7eLCBgJCz6FiDiFB33p4TN0=" /></div>        <div class="form-group">
+         <input type="text" name="qcode" class="form-control" placeholder="Code">
+        </div>
+</form>    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Status <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/reserves?qtype=status&amp;status=1">Watch(1)</a></li>
+            <li><a href="/reserves?qtype=status&amp;status=3">Addition(3)</a></li>
+            <li class="divider"></li>
+            <li><a href="/reserves?qtype=status&amp;status=2">New High(2)</a></li>
+            <li><a href="/reserves?qtype=status&amp;status=4">Take Off(4)</a></li>
+            <li class="divider"></li>
+            <li><a href="/reserves?qtype=status&amp;status=0">Others(0)</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Advise <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/reserves?optadvise=buy&amp;qtype=advise">Buy</a></li>
+            <li><a href="/reserves?optadvise=sell&amp;qtype=advise">Sell</a></li>
+            <li class="divider"></li>
+            <li><a href="/reserves?optadvise=&amp;qtype=advise">Others</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/quotations?qtype=yestoday">Yestoday Quotations</a></li>
+            <li><a href="/reserves?qtype=yestoday">Yestoday Reserves</a></li>
+            <li class="divider"></li>
+            <li><a href="/quotations?qtype=today">Today Quotations</a></li>
+            <li><a href="/reserves?qtype=today">Today Reserves</a></li>
+            <li class="divider"></li>
+            <li><a href="/quotations?qtype=all">All Quotations</a></li>
+            <li><a href="/reserves">All Reserves</a></li>
+            <li class="divider"></li>
+            <li><a href="/quotationdatafiles">All Bat Files</a></li>
+            <li><a href="/marketdates">All Marketdates</a></li>
+            <li><a href="/sysconfigs">All System Config</a></li>
+            <li class="divider"></li>
+            <li><a href="/users">All Users</a></li>
+            <li><a href="/accounts">All Accounts</a></li>
+            <li><a href="/portfolios">All Portfolios</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Daily Action <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/quotationdatafiles/new?battype=q">Quotation batch</a></li>
+            <li><a href="/quotations?cqstatus=chuquan&amp;qtype=status">Stock Dividend</a></li>
+            <li class="divider"></li>
+            <li><a href="/quotationdatafiles/new?battype=b">Reserve batch</a></li>
+            <li class="divider"></li>
+            <li><a href="/reserves?qtype=catch">Analysis</a></li>
+            <li class="divider"></li>
+            <li><a data-confirm="Are you sure?" href="/quotationdatafiles/dobatch?battype=riqie">Date Change</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/quotations/new">New Quotation</a></li>
+            <li><a href="/reserves/new">New Reserve</a></li>
+            <li class="divider"></li>
+            <li><a data-confirm="Are you sure?" href="/marketdates/reset_marketdate_to_today">Reset Marketdate</a></li>
+            <li class="divider"></li>
+            <li> <a data-method="delete" href="/users/sign_out" rel="nofollow">退出</a> </li>
+            <li> <a href="/users/edit">修改密码</a> </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Test <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/quotationdatafiles/dobatch?battype=all">allportfolios</a></li>
+      <li><a href="/quotationdatafiles/dobatch?battype=guangzhu">guanzhu</a></li>
+      <li><a href="/quotationdatafiles/dobatch?battype=zhanghu">zhanghu</a></li>
+      <li><a href="/quotationdatafiles/dobatch?battype=jiangu">jiangu</a></li>
+      <li><a href="/quotationdatafiles/dobatch?battype=shouyi">shouyi</a></li>
+      <li class="divider"></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<p class="notice"></p>
+<p class="alert"></p>
+<span></span>
+<div>
+</div>
+
+<div class="page-header">
+  <h1>Sysconfigs</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Cfgdate</th>
+      <th>Cfgtime</th>
+      <th>Cfgname</th>
+      <th>Cfginteger</th>
+      <th>Cfgstring</th>
+      <th>Cfgtext</th>
+      <th>Lock version</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><a href="/sysconfigs/17">17</a></td>
+        <td>2014-08-26</td>
+        <td>2000-01-01 01:54:00 UTC</td>
+        <td>marketdate</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>37</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/17/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/17" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/18">18</a></td>
+        <td></td>
+        <td>2000-01-01 23:30:00 UTC</td>
+        <td>batchstart</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/18/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/18" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/19">19</a></td>
+        <td></td>
+        <td>2000-01-01 23:59:00 UTC</td>
+        <td>batchend</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/19/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/19" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/20">20</a></td>
+        <td></td>
+        <td></td>
+        <td>account_num_max</td>
+        <td>3</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/20/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/20" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/21">21</a></td>
+        <td></td>
+        <td></td>
+        <td>portfolio_num_max</td>
+        <td>5</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/21/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/21" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/22">22</a></td>
+        <td>2014-08-19</td>
+        <td>2000-01-01 07:57:00 UTC</td>
+        <td>batchstatus</td>
+        <td>0</td>
+        <td></td>
+        <td></td>
+        <td>162</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/22/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/22" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/23">23</a></td>
+        <td>2014-08-02</td>
+        <td>2000-01-01 04:23:00 UTC</td>
+        <td>batchname</td>
+        <td></td>
+        <td>quotation</td>
+        <td></td>
+        <td>88</td>
+        <td>Sat, 02 Aug 2014 04:01:14 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/23/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/23" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="/sysconfigs/24">24</a></td>
+        <td>2014-08-26</td>
+        <td>2000-01-01 01:59:00 UTC</td>
+        <td>durationmax</td>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td>0</td>
+        <td>Tue, 26 Aug 2014 01:59:39 +0000</td>
+        <td>
+          <a class="btn btn-default btn-xs" href="/sysconfigs/24/edit">Edit</a>
+          <a class="btn btn-xs btn-danger" data-confirm="Are you sure?" data-method="delete" href="/sysconfigs/24" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="/sysconfigs/new">New</a>
+
+
+
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>
+

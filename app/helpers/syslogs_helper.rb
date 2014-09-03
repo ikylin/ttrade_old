@@ -1,0 +1,2 @@
+module SyslogsHelper
+end

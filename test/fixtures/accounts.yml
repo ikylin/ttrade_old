@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  setdate: 2014-07-20
+  name: MyString
+  tradenum: 1
+  winratio: 9.99
+  plratio: 9.99
+  profitmax: 9.99
+  lossmax: 9.99
+
+two:
+  setdate: 2014-07-20
+  name: MyString
+  tradenum: 1
+  winratio: 9.99
+  plratio: 9.99
+  profitmax: 9.99
+  lossmax: 9.99

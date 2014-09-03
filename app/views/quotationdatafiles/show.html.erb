@@ -1,0 +1,31 @@
+<%- model_class = Quotationdatafile -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:filetype) %>:</strong></dt>
+  <dd><%= @quotationdatafile.filetype %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:filestatus) %>:</strong></dt>
+  <dd><%= @quotationdatafile.filestatus %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_file_name) %>:</strong></dt>
+  <dd><%= @quotationdatafile.avatar_file_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_content_type) %>:</strong></dt>
+  <dd><%= @quotationdatafile.avatar_content_type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_file_size) %>:</strong></dt>
+  <dd><%= @quotationdatafile.avatar_file_size %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:avatar_updated_at) %>:</strong></dt>
+  <dd><%= @quotationdatafile.avatar_updated_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:marketdate) %>:</strong></dt>
+  <dd><%= @quotationdatafile.marketdate %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              quotationdatafiles_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_quotationdatafile_path(@quotationdatafile), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              quotationdatafile_path(@quotationdatafile),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

@@ -1,0 +1,27 @@
+<h1>Listing portfoliologs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Opt</th>
+      <th>Time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @portfoliologs.each do |portfoliolog| %>
+      <tr>
+        <td><%= portfoliolog.opt %></td>
+        <td><%= portfoliolog.time %></td>
+        <td><%= link_to 'Show', portfoliolog %></td>
+        <td><%= link_to 'Edit', edit_portfoliolog_path(portfoliolog) %></td>
+        <td><%= link_to 'Destroy', portfoliolog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Portfoliolog', new_portfoliolog_path %>
