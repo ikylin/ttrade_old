@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140903063702) do
+ActiveRecord::Schema.define(version: 20140903072437) do
 
   create_table "accounts", force: true do |t|
     t.date     "setdate"
@@ -148,8 +148,6 @@ ActiveRecord::Schema.define(version: 20140903063702) do
     t.date     "catchdate"
     t.date     "releasedate"
   end
-
-  add_index "reserves", ["marketdate", "quotation_id"], name: "index_reserves_on_marketdate_and_quotation_id", unique: true
 
   create_table "roles", force: true do |t|
     t.string   "name"
