@@ -7,7 +7,7 @@ s = Rufus::Scheduler.singleton
 
 # Stupid recurrent task...
 #
-#s.every '1m' do
+#s.cron '36 13 * * *' do
 
 #  Rails.logger.info "hello, it's #{Time.now}"
 #end

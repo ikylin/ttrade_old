@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :everydaytips
+
   resources :odsreserves
 
   get 'about/help'

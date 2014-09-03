@@ -358,7 +358,7 @@ module QuotationdatafilesHelper
   end
 	
 	def guanzhu openid
-    logger.info "guanzhu >>>>>>>>>>>>>>" + openid
+    #logger.info "guanzhu >>>>>>>>>>>>>>" + openid
     u = User.find_by(openid: openid)
     if u.nil?
       attributes = {openid: openid, weixinstatus: 1, guanzhudate: tradedate, email: "#{openid}@weixin.com", password: openid[1..8]}
@@ -371,11 +371,26 @@ module QuotationdatafilesHelper
     end
 	end
 
+  def usercheck openid
+    #logger.info "guanzhu >>>>>>>>>>>>>>" + openid
+    u = User.find_by(openid: openid)
+    if u.nil?
+      attributes = {openid: openid, weixinstatus: 1, guanzhudate: tradedate, email: "#{openid}@weixin.com", password: openid[1..8]}
+      User.create!(attributes)	
+    else
+      if u.weixinstatus == 0
+        u.update(weixinstatus: 1, quxiaoguanzhudate: '')
+        welcome_again_message 
+      end
+    end
+	end
+
+
   def welcome_again_message 
-    "Welcome back to trendtrade system. \n"
+    "朋友，欢迎回到三元量化投资模型。\n"
   end
   def welcome_message
-    "Welcome to trendtrade system. \n"
+    resumeinfo
   end
 
   def quxiaoguanzhu openid
@@ -445,17 +460,17 @@ module QuotationdatafilesHelper
       end
 
 			i = 1	
-      @allportfolios = "【#{tradedate}】 \n序号 编码 名称 盈亏比 收益率 当前价 止盈 止损 板块 \n" 
+      @allportfolios = "【#{tradedate}】 \n序号 编码 名称 盈亏比 收益率 当前价 止盈 止损 板块\n" 
       @reserves.each do |r|
         @allportfolios = @allportfolios + "(#{i}). " 
         @allportfolios = @allportfolios + r.quotation.code + ' ' 
         @allportfolios = @allportfolios + r.quotation.name + ' ' 
-        @allportfolios = @allportfolios + format('%0.2f', r.plratio).to_s + '倍 ' 
-        @allportfolios = @allportfolios + format('%0.2f', (100 * r.profit)).to_s + '% '
+        @allportfolios = @allportfolios + format('%0.1f', r.plratio).to_s + '倍 ' 
+        @allportfolios = @allportfolios + format('%0.1f', (100 * r.profit)).to_s + '% '
         @allportfolios = @allportfolios + format('%0.2f', r.quotation.close).to_s + ' ' 
         @allportfolios = @allportfolios + format('%0.2f', r.hhv).to_s + ' ' 
         @allportfolios = @allportfolios + format('%0.2f', r.llv).to_s + ' ' 
-        @allportfolios = @allportfolios + r.quotation.plate + ' '  + "\n"
+        @allportfolios = @allportfolios + r.quotation.plate + "\n"
 
 				i = i + 1
       end
@@ -504,16 +519,34 @@ module QuotationdatafilesHelper
   end
 
   def doreplay openid, keyword
+    usercheck openid
     case keyword
+    when '1' 
+      resumeinfo
+    when '2' 
+      everydaytip
     when '3' 
       allportfolios  
     else
-      "Hello \n" + helpinfo 
+      "您好，我是趋势交易模型\n" + helpinfo 
       #"Hello #{openid} \n" + helpinfo 
     end
   end
 
+  def resumeinfo
+    resumeinfo = "本模型认为交易盈利的三元素包括交易胜率、交易盈亏比及交易笔数，其中以选股模型保证交易胜率、以盈亏分析系统保证盈亏比率，依托量化分析在胜率及盈亏比上确保每笔交易都能有明确的进出场操作点，而最终的盈利往往是由时间及市场行情共同作用产生的。\n跟随本模型来进行交易将会培养投资者科学的可持续盈利方式，良好的操作习惯以便于从万千散户中脱颖而出，取得良好的投资收益。"
+    resumeinfo
+  end
+
+  def everydaytip
+    n = Everydaytip.count
+    Everydaytip.find_by(id: rand(n) + 1).tip
+  end
+
   def helpinfo
-    ""
+    helpinfo = "输入数字 1 【简介】查看模型介绍。\n"
+    helpinfo = helpinfo + "输入数字 2 【心得】获得每日一帖。\n"
+    helpinfo = helpinfo + "输入数字 3 【组合】可以获得当前的股票组合信息。\n"
+    helpinfo
   end
 end
