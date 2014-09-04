@@ -1,8 +1,6 @@
-<h1>Welcome#index</h1>
+<h1>欢迎您来到量化交易平台</h1>
 <% if user_signed_in? %>
-  <p>The user is loged in.</p>
   <% if can? :manage, :Home %>
     <%= link_to "About", welcome_index_path   %>
   <% end %>
 <% end %>
-<p>Find me in app/views/welcome/index.html.erb</p>
