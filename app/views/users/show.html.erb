@@ -32,6 +32,20 @@
   <dd><%= @user.guanzhudate %></dd>
   <dt><strong><%= model_class.human_attribute_name(:quxiaoguanzhudate) %>:</strong></dt>
   <dd><%= @user.quxiaoguanzhudate %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:confirmation_token) %>:</strong></dt>
+  <dd><%= @user.confirmation_token %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:confirmed_at) %>:</strong></dt>
+  <dd><%= @user.confirmed_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:confirmation_sent_at) %>:</strong></dt>
+  <dd><%= @user.confirmation_sent_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:unconfirmed_email) %>:</strong></dt>
+  <dd><%= @user.unconfirmed_email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:failed_attempts) %>:</strong></dt>
+  <dd><%= @user.failed_attempts %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:unlock_token) %>:</strong></dt>
+  <dd><%= @user.unlock_token %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:locked_at) %>:</strong></dt>
+  <dd><%= @user.locked_at %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

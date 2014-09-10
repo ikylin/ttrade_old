@@ -27,6 +27,20 @@
   <%= error_span(@user[:guanzhudate]) %>
   <%= f.input :quxiaoguanzhudate %>
   <%= error_span(@user[:quxiaoguanzhudate]) %>
+  <%= f.input :confirmation_token %>
+  <%= error_span(@user[:confirmation_token]) %>
+  <%= f.input :confirmed_at %>
+  <%= error_span(@user[:confirmed_at]) %>
+  <%= f.input :confirmation_sent_at %>
+  <%= error_span(@user[:confirmation_sent_at]) %>
+  <%= f.input :unconfirmed_email %>
+  <%= error_span(@user[:unconfirmed_email]) %>
+  <%= f.input :failed_attempts %>
+  <%= error_span(@user[:failed_attempts]) %>
+  <%= f.input :unlock_token %>
+  <%= error_span(@user[:unlock_token]) %>
+  <%= f.input :locked_at %>
+  <%= error_span(@user[:locked_at]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

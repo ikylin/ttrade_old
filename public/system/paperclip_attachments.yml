@@ -1,0 +1,8 @@
+---
+:Sysconfig:
+  :imgfile:
+  - :poster
+  - :large
+  - :medium
+  - :small
+  - :thumb

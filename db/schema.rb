@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904012005) do
+ActiveRecord::Schema.define(version: 20140905014937) do
 
   create_table "accounts", force: true do |t|
     t.date     "setdate"
@@ -129,13 +129,13 @@ ActiveRecord::Schema.define(version: 20140904012005) do
 
   create_table "reserves", force: true do |t|
     t.string   "stockstatus"
-    t.decimal  "hhv",          precision: 6, scale: 2
-    t.decimal  "llv",          precision: 6, scale: 2
+    t.decimal  "hhv",           precision: 6, scale: 2
+    t.decimal  "llv",           precision: 6, scale: 2
     t.date     "hdate"
     t.date     "ldate"
-    t.decimal  "profit",       precision: 6, scale: 2
-    t.decimal  "loss",         precision: 6, scale: 2
-    t.decimal  "plratio",      precision: 6, scale: 2
+    t.decimal  "profit",        precision: 6, scale: 2
+    t.decimal  "loss",          precision: 6, scale: 2
+    t.decimal  "plratio",       precision: 6, scale: 2
     t.text     "note"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -147,6 +147,8 @@ ActiveRecord::Schema.define(version: 20140904012005) do
     t.integer  "duration"
     t.date     "catchdate"
     t.date     "releasedate"
+    t.decimal  "catchplratio",  precision: 5, scale: 2
+    t.decimal  "winpercentage", precision: 6, scale: 2
   end
 
   create_table "roles", force: true do |t|
@@ -157,8 +159,8 @@ ActiveRecord::Schema.define(version: 20140904012005) do
     t.datetime "updated_at"
   end
 
-  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
-  add_index "roles", ["name"], name: "index_roles_on_name"
+  add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
+  add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "sysconfigs", force: true do |t|
     t.date     "cfgdate"
@@ -170,6 +172,14 @@ ActiveRecord::Schema.define(version: 20140904012005) do
     t.string   "cfgstring"
     t.text     "cfgtext"
     t.integer  "lock_version"
+    t.string   "imgfile_file_name"
+    t.string   "imgfile_content_type"
+    t.integer  "imgfile_file_size"
+    t.datetime "imgfile_updated_at"
+    t.string   "txtfile_file_name"
+    t.string   "txtfile_content_type"
+    t.integer  "txtfile_file_size"
+    t.datetime "txtfile_updated_at"
   end
 
   create_table "syslogs", force: true do |t|
@@ -206,19 +216,20 @@ ActiveRecord::Schema.define(version: 20140904012005) do
     t.integer  "failed_attempts",        default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
+    t.string   "ustatus"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "role_id"
   end
 
-  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
+  add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
 
   create_table "weixinlogs", force: true do |t|
     t.datetime "time"

@@ -3,7 +3,7 @@ class Reserve < ActiveRecord::Base
 	belongs_to	:quotation
 	belongs_to	:analyst
 	resourcify
-	scope	:daydata, ->(marketdate) { where("marketdate == ?", marketdate) }
+	scope	:daydata, ->(marketdate) { where("marketdate = ?", marketdate) }
 	
 	class << self
 		def refresh(close)

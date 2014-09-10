@@ -70,6 +70,6 @@ class SysconfigsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sysconfig_params
-      params.require(:sysconfig).permit(:cfgname, :cfginteger, :cfgdate, :cfgtime, :cfgstring, :cfgtext)
+      params.require(:sysconfig).permit(:cfgname, :cfginteger, :cfgdate, :cfgtime, :cfgstring, :cfgtext, :lock_version, :txtfile, :imgfile)
     end
 end

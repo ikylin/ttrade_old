@@ -1,4 +1,4 @@
-<%= simple_form_for @sysconfig, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @sysconfig, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
   <%= f.input :cfgdate %>
   <%= error_span(@sysconfig[:cfgdate]) %>
   <%= f.input :cfgtime %>
@@ -13,6 +13,12 @@
   <%= error_span(@sysconfig[:cfgtext]) %>
   <%= f.input :lock_version %>
   <%= error_span(@sysconfig[:lock_version]) %>
+
+  <%= f.label :txtfile %>  
+  <%= f.file_field :txtfile %>
+
+  <%= f.label :imgfile %>  
+  <%= f.file_field :imgfile %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

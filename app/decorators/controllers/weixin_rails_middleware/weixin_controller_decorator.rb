@@ -8,12 +8,45 @@ WeixinRailsMiddleware::WeixinController.class_eval do
   def reply
     render xml: send("response_#{@weixin_message.MsgType}_message", {})
   end
+  
+    private
+    def autoreplay
+      job_id =
+        Rufus::Scheduler.singleton.in '10s' do
+          Rails.logger.info "time flies, it's now #{Time.now}"
+          @weixin_message.FromUserName = 'ocUDQt3fXQ6XMLjNhgWMIxB9Ro1w'
+          articles = []
+          articles << generate_article('title', 'des', qrcodegen, qrcodegen)
+          reply_news_message(articles)
+        end
+      Rails.logger.info "time flies, it's now #{Time.now}" + job_id
+    end
 
-  private
 
     def response_text_message(options={})
+      usercheck @weixin_message.FromUserName
+      case "#{@keyword}"
+      when '1' 
+        reply_text_message(resumeinfo)
+        #autoreplay
+      when '2' 
+        reply_text_message(everydaytip)
+      when '3' 
+        reply_text_message(allportfolios)  
+      when '4' 
+        logger.info '>>>>>>>>>>>>>>>>>' +  qrcodegen
+
+        articles = []
+        articles << generate_article('title', 'des', qrcodegen, qrcodegen)
+        reply_news_message(articles)
+
+        #reply_image_message(generate_image(qrcodegen))
+      else
+        reply_text_message("您好，我是趋势交易模型\n" + helpinfo)
+        #"Hello #{openid} \n" + helpinfo 
+      end
+
       #reply_text_message(@weixin_message.FromUserName)
-      reply_text_message(doreplay(@weixin_message.FromUserName, "#{@keyword}"))
       #reply_text_message("Your Message: #{@keyword}")
     end
 

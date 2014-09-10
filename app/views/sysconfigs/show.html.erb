@@ -18,6 +18,10 @@
   <dd><%= @sysconfig.cfgtext %></dd>
   <dt><strong><%= model_class.human_attribute_name(:lock_version) %>:</strong></dt>
   <dd><%= @sysconfig.lock_version %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:txtfile) %>:</strong></dt>
+  <dd><%= @sysconfig.txtfile.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:imgfile) %>:</strong></dt>
+  <dd><%= image_tag @sysconfig.imgfile.url(:thumb) %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 	end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
   get 'welcome/index'
 
   resources :sysconfigs
@@ -47,6 +47,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+
+  get '/pub/index', to: 'reserves#pubindex', as: 'sysanalyst'
   root 'welcome#index'
 
   # Example of regular route:

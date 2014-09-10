@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ttrade</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<meta http-equiv="Content-type" content="text/rhtml; charset=utf8" />
+</head>
+<body>
+
+<div class="container">
+   <div class="row" >
+      <div class="col-xs-6 col-md-offset-3">
+        <div class="jumbotron">
+          <h1>Hello, world!</h1>
+          <p>...</p>
+          <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+        </div>
+      </div>
+   </div>
+
+   <div class="row" >
+      <div class="col-xs-6 col-md-offset-3"> 
+          <%= yield %>
+      </div>
+   </div>
+
+   <div class="row" >
+      <div class="col-xs-6 col-md-offset-3"> 
+          <%= image_tag qrcode_url(:medium) %>
+      </div>
+   </div>
+
+</div>
+
+</body>
+</html>

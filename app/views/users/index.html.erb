@@ -9,12 +9,16 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:openid) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:current_sign_in_at) %></th>
       <th><%= model_class.human_attribute_name(:last_sign_in_at) %></th>
       <th><%= model_class.human_attribute_name(:current_sign_in_ip) %></th>
       <th><%= model_class.human_attribute_name(:last_sign_in_ip) %></th>
       <th><%= model_class.human_attribute_name(:weixinstatus) %></th>
       <th><%= model_class.human_attribute_name(:guanzhudate) %></th>
       <th><%= model_class.human_attribute_name(:quxiaoguanzhudate) %></th>
+      <th><%= model_class.human_attribute_name(:failed_attempts) %></th>
+      <th><%= model_class.human_attribute_name(:unlock_token) %></th>
+      <th><%= model_class.human_attribute_name(:locked_at) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -26,12 +30,16 @@
         <td><%= user.name %></td>
         <td><%= user.openid %></td>
         <td><%= user.email %></td>
+        <td><%= user.current_sign_in_at %></td>
         <td><%= user.last_sign_in_at %></td>
         <td><%= user.current_sign_in_ip %></td>
         <td><%= user.last_sign_in_ip %></td>
         <td><%= user.weixinstatus %></td>
         <td><%= user.guanzhudate %></td>
         <td><%= user.quxiaoguanzhudate %></td>
+        <td><%= user.failed_attempts %></td>
+        <td><%= user.unlock_token %></td>
+        <td><%= user.locked_at %></td>
         <td><%=l user.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
